@@ -19,3 +19,10 @@
     }
     return val;
 }
+
+- (int) permNoRepNValue:(int)n rValue:(int)r {
+
+    int value = [self factorialOf:n]/[self factorialOf:(n-r)];
+
+    return value
+}
