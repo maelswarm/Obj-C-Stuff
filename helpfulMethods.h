@@ -8,7 +8,6 @@
 }
 
 - (float)factorialOf:(float)input {
-    
     float val = input;
     if (val == 0) {
         return 1;
@@ -21,7 +20,6 @@
 }
 
 - (int)permNoRepNValue:(int)n rValue:(int)r {
-
     int value = [self factorialOf:n]/[self factorialOf:(n-r)];
 
     return value
