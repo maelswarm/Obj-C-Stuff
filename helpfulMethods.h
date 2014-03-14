@@ -24,3 +24,11 @@
 
     return value
 }
+
+- (bool)isPrime:(int)n {
+    if (((n/2)+(n/2) == n) || ((n/3)+(n/3) == n)){
+        return false;
+    }
+    
+    return true;
+}
