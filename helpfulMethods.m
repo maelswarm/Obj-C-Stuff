@@ -1,5 +1,5 @@
-- (BOOL)this:(float)this islessthan:(float)lowLim andGreaterThan:(float)uplim {
-    if (this < uplim && this > lowLim) {
+- (BOOL)isThis:(float)this islessThan:(float)upLim andGreaterThan:(float)lowLim {
+    if (this < upLim && this > lowLim) {
         return YES;
     }
     else {
