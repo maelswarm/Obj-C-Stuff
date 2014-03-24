@@ -32,3 +32,16 @@
     
     return true;
 }
+
+- (long)fibonAtN:(int)n {
+    long a = 1;
+    long b = 2;
+    for (int i = 0; i < n+1; i++) {
+        if (i+1 == n) {
+        return b;
+        }
+        long temp = b;
+        b += a;
+        a = temp;
+    }
+}
