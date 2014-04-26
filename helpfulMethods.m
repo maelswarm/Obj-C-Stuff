@@ -4,6 +4,11 @@
         // Within the group enumeration block, filter to enumerate your photos.
         [group setAssetsFilter:[ALAssetsFilter allPhotos]];
         
+        //if index exceeds bounds, kill the method
+        if (index < 0 || index > [group numberOfAssets]-1) {
+            return;
+        }
+        
         // Chooses the photo at the index
         [group enumerateAssetsAtIndexes:[NSIndexSet indexSetWithIndex:index] options:0 usingBlock:^(ALAsset *alAsset, NSUInteger inde, BOOL *innerStop) {
             // The end of the enumeration is signaled by asset == nil.
@@ -27,7 +32,7 @@
 }
 
 // Either this...
-    [self loadImageFromIndex:0 withAssetLibrary:lib];
+    [self loadImageFromIndex:num withAssetLibrary:lib];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.imageView.image = image1;
     });
