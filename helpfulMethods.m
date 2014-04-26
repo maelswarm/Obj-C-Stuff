@@ -12,19 +12,17 @@
                 ALAssetRepresentation *representation = [alAsset defaultRepresentation];
                 UIImage *tempImage = [UIImage imageWithCGImage:[representation fullScreenImage]];
                 image1 = tempImage;
+                
                 // Either this...
                     self.imageView.image = image1;
                 //Or see below //@@@//
-                
+         
             }
-            
         }];
     }
      
     failureBlock: ^(NSError *error) {
-    
         NSLog(@"None");
-                             
     }];
 }
 
