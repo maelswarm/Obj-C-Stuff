@@ -87,3 +87,38 @@
         a = temp;
     }
 }
+
+
+
+- (void)revDivNumGen {
+    NSMutableArray *arr = [NSMutableArray new];
+    long long num = 108;
+    long long origNum = num;
+    
+    for (int i = 1; i < 200; i++) {
+        
+        long long cc = 0;
+        
+        if ((i%2) == 0) {
+            num = llabs(num);
+            while (num>0)
+            {
+                cc = cc * 10 + (num%10);
+                num = num / 10;
+            }
+            origNum +=cc;
+        }
+        else {
+            num = llabs(num);
+            while (num>0)
+            {
+                cc = cc * 10 + (num%10);
+                num = num / 10;
+            }
+            origNum -=cc;
+        }
+        num = origNum;
+        [arr addObject:[NSNumber numberWithLongLong:llabs(num)]];
+    }
+    NSLog(@"%@", arr);
+}
