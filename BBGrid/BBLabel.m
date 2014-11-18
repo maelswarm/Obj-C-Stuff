@@ -1,4 +1,3 @@
-
 #import "BBLabel.h"
 
 @interface BBLabel() {
