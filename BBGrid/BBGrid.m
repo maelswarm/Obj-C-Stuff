@@ -171,49 +171,6 @@
     
 }
 
-- (void)checkForWordsOn:(CGPoint)boxCoords {
-    NSLog(@"%f %f", boxCoords.x, boxCoords.y);
-    BBLabel *curB = (BBLabel *)[[self.gridArr objectAtIndex:boxCoords.x] objectAtIndex:(int)boxCoords.y];
-    [self searchForWord:boxCoords];
-    //NSLog(@"%@", curB.label.text);
+- (void)didClick:(CGPoint)boxCoords {
+    //do something
 }
-
-- (int)searchForWord:(CGPoint)ptToSearch {
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Scrabble"
-                                                         ofType:@"txt"];
-    NSError *error = nil;
-    NSString *fileContent = [NSString stringWithContentsOfFile:filePath
-                                                      encoding:NSUTF8StringEncoding
-                                                         error:&error];
-    NSScanner *scanner = [NSScanner scannerWithString: fileContent];
-    NSCharacterSet *whitespace = [NSCharacterSet newlineCharacterSet];
-    NSString *tempstringOut;
-    
-    BOOL DIP = NO;
-    for (int i=0; i<ptToSearch.x-1; i++) {
-        NSMutableString *temp = [NSMutableString new];
-        BBLabel *curB;
-        for (int j=i; j<=ptToSearch.x; j++) {
-            curB = (BBLabel *)[[self.gridArr objectAtIndex:j] objectAtIndex:ptToSearch.y];
-            [temp appendString:curB.label.text];
-        }
-        //NSLog(@"%@", temp);
-        while ([scanner isAtEnd] == NO) {
-            [scanner scanUpToCharactersFromSet:whitespace intoString:&tempstringOut];
-            if ([tempstringOut isEqualToString:temp]) {
-                NSLog(@"%@ \n 1 \n", tempstringOut);
-                DIP = YES;
-                break;
-            }
-        }
-        scanner.scanLocation = 0;
-        if (DIP == YES) {
-            break;
-        }
-    }
-    
-    return 0;
-}
-
-@end
