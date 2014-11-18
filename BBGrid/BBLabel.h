@@ -6,7 +6,7 @@
 @required
 - (void)sendDataBack:(int)PoserNeg XerY:(int)xy gridIdentity:(CGPoint)boxCoords;
 - (void)dragEnded:(CGPoint)boxcoords movingCoord:(float)dirCoord XerY:(int)xy;
-- (void)checkForWordsOn:(CGPoint)boxCoords;
+- (void)didClick:(CGPoint)boxCoords;
 
 @end
 
