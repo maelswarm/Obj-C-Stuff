@@ -133,7 +133,7 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     if (self.wasMoved == NO) {
-        [self.delegate checkForWordsOn:self->labelCoordinate];
+        [self.delegate didClick:self->labelCoordinate];
     }
 }
 
