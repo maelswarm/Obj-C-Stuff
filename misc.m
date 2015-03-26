@@ -38,8 +38,6 @@
     });
 //Or see above //@@@//
 
-
-
 - (BOOL)isThis:(float)this islessThan:(float)upLim andGreaterThan:(float)lowLim {
     if (this < upLim && this > lowLim) {
         return YES;
